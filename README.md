@@ -1,7 +1,7 @@
- Expense tracker application built with HTML,CSS and JAVASCRIPT.
-##features 
-*Add and track expenses
-*categories expense
-*view expense history
-* responsive design
+ Expense tracker application built with HTML,CSS and JAVASCRIPT <br>
+##features <br>
+*Add and track expenses<br>
+*categories expense<br>
+*view expense history<br>
+* responsive design<br>
   
