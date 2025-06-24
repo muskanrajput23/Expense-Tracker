@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Welcome Page -->
+  <div id="welcome-page" class="page active">
+    <div class="welcome-container">
+      <div class="left">
+        <h2>Expense Tracker <span>📊</span></h2>
+        <p>Hello <span>👋</span>, please enter your</p>
+        <h1>Name</h1>
+        <input type="text" id="username" placeholder="Name Here" />
+        <button onclick="navigateTo('login-page')">Login</button>
+      </div>
+      <div class="right">
+        <button onclick="navigateTo('login-page')">Click Here</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Page -->
+  <div id="login-page" class="page">
+    <div class="login-card">
+      <h1>Expense Tracker</h1>
+      <form id="login-form">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required />
+
+        <div class="forgot"><a href="#">Forgot Password?</a></div>
+
+        <button type="submit" class="login">Login</button>
+
+        <div class="divider">Or login with</div>
+
+        <div class="oauth-btn">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" class="icon" />
+          Continue with Google
+        </div>
+        <div class="oauth-btn">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="Apple" class="icon" />
+          Continue with Apple
+        </div>
+
+        <div class="bottom-text">
+          Don't have an account? <a href="#" onclick="navigateTo('welcome-page')">Sign Up</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Expense Page -->
+  <div id="expense-page" class="page">
+    <div class="dashboard">
+      <div class="nav-header">
+        <a href="#" class="back-btn" onclick="navigateTo('dashboard-page')">← Back</a>
+        <h2>Add Expense</h2>
+        <div style="width: 24px;"></div>
+      </div>
+      
+      <label for="category">Categories</label>
+      <select id="category">
+        <option value="Entertainment">Entertainment</option>
+        <option value="Groceries">Groceries</option>
+        <option value="Gas">Gas</option>
+        <option value="Shopping">Shopping</option>
+        <option value="News Paper">News Paper</option>
+        <option value="Transport">Transport</option>
+        <option value="Rent">Rent</option>
+      </select>
+
+      <label for="amount">Amount</label>
+      <input type="number" id="amount" placeholder="$0.00">
+
+      <label for="date">Date</label>
+      <input type="date" id="date">
+
+      <label for="receipt">Attach Receipt</label>
+      <input type="file" id="receipt">
+
+      <label>Categories</label>
+      <div class="category-icons">
+        <button>🛒 Groceries</button>
+        <button>🎬 Entertainment</button>
+        <button>⛽ Gas</button>
+        <button>🛍 Shopping</button>
+        <button>📰 News Paper</button>
+        <button>🚌 Transport</button>
+        <button>🏠 Rent</button>
+        <button>➕ Add Category</button>
+      </div>
+
+      <button class="save-btn" onclick="addExpense()">Report</button>
+
+      <ul id="expenseList"></ul>
+    </div>
+  </div>
+
+  <!-- Dashboard Page -->
+  <div id="dashboard-page" class="page">
+    <div class="dashboard-container">
+      <div class="header">
+        <div class="user-info">
+          <div>
+            <small>Good Morning</small>
+            <h3 id="dashboard-username">User</h3>
+            <button onclick="showIncomeModal()" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid white; padding: 4px 8px; border-radius: 6px; font-size: 12px; margin-top: 5px; cursor: pointer; font-weight: 500;">Set Income</button>
+          </div>
+          <select>
+            <option>This month</option>
+          </select>
+        </div>
+        <div class="balance-box">
+          <h2 id="balance-amount">$0.00</h2>
+          <div class="summary">
+            <div>
+              <small>Income</small>
+              <span id="income-amount">$0.00</span>
+            </div>
+            <div>
+              <small>Expenses</small>
+              <span id="expense-amount">$0.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h4>Recent Expenses</h4>
+        <div id="expense-list"></div>
+      </div>
+      <div class="bottom-nav">
+        <button onclick="navigateTo('dashboard-page')">🏠</button>
+        <button style="background: #fff; color: #2f54eb; border: none; padding: 4px 8px; border-radius: 6px; font-size: 12px; margin-top: 5px; cursor: pointer;" onclick="navigateTo('expense-page')">Add Expense</button>
+        <button onclick="generateReport()">📊</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Income Modal -->
+  <div id="income-modal" class="modal">
+    <div class="modal-content">
+      <h2>Set Your Monthly Income</h2>
+      <input type="number" id="income-input" placeholder="Enter amount">
+      <button onclick="setIncome()">Save Income</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

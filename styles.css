@@ -1,0 +1,505 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+}
+
+.page {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Welcome Page Styles */
+.welcome-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1100px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.left {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.left h2 {
+  font-size: 1.4rem;
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+.left h1 {
+  font-size: 3rem;
+  color: #304ffe;
+  margin-bottom: 20px;
+}
+
+.left input {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.left button {
+  background-color: #304ffe;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.left button:hover {
+  background-color: #1e40ff;
+}
+
+.right {
+  background-color: #304ffe;
+  width: 320px;
+  height: 320px;
+  border-top-left-radius: 160px;
+  border-bottom-left-radius: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right button {
+  background-color: #fff;
+  color: #304ffe;
+  border: none;
+  padding: 12px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.right button:hover {
+  background: #e0e0e0;
+}
+
+/* Login Page Styles */
+.login-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.login-card h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #1a237e;
+  margin-bottom: 30px;
+}
+
+.login-card label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.login-card input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+}
+
+.login-card .forgot {
+  text-align: right;
+  font-size: 0.85rem;
+  margin-top: -15px;
+  margin-bottom: 20px;
+}
+
+.login-card .forgot a {
+  text-decoration: none;
+  color: #1a73e8;
+}
+
+.login-card button.login {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-card button.login:hover {
+  background-color: #0d47a1;
+}
+
+.login-card .divider {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 0.85rem;
+  color: #888;
+  position: relative;
+}
+
+.login-card .divider::before,
+.login-card .divider::after {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 1px;
+  background-color: #ccc;
+  top: 50%;
+}
+
+.login-card .divider::before {
+  left: 0;
+}
+
+.login-card .divider::after {
+  right: 0;
+}
+
+.login-card .oauth-btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-weight: 500;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.login-card .bottom-text {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.login-card .bottom-text a {
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-card img.icon {
+  height: 20px;
+}
+
+/* Expense Page Styles */
+.dashboard {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.dashboard h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.dashboard label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 500;
+}
+
+.dashboard input[type="number"], 
+.dashboard input[type="date"], 
+.dashboard input[type="file"], 
+.dashboard select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+}
+
+.category-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.category-icons button {
+  border: none;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  background: #f3f4f6;
+  cursor: pointer;
+}
+
+.save-btn {
+  width: 100%;
+  padding: 12px;
+  background: #2f54eb;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#expenseList li {
+  background: #f0f2f5;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-btn {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.back-btn {
+  text-decoration: none;
+  color: #2f54eb;
+  font-weight: bold;
+}
+
+/* Dashboard Page Styles */
+.dashboard-container {
+  width: 375px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.header {
+  background: linear-gradient(135deg, #2d6ef7, #5b8dfd);
+  color: white;
+  padding: 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.header .user-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.header h3 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.balance-box {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+.balance-box h2 {
+  font-size: 24px;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.summary div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary span {
+  font-weight: bold;
+}
+
+.content {
+  padding: 20px;
+}
+
+.content h4 {
+  margin-bottom: 10px;
+}
+
+.expense-item {
+  background: #f4f6fa;
+  padding: 10px 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expense-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.expense-left span:first-child {
+  font-weight: bold;
+}
+
+.expense-right {
+  font-weight: bold;
+  color: red;
+  display: flex;
+  align-items: center;
+}
+
+.expense-right button {
+  margin-left: 10px;
+  color: red;
+  border: none;
+  background: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background: #fff;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.add-button {
+  background: #2f54eb;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  margin-top: -25px;
+}
+
+/* Income Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #304ffe;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 12px;
+  background-color: #304ffe;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
